@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Feb 13, 2019 at 11:46 PM
+-- Generation Time: Feb 14, 2019 at 12:53 PM
 -- Server version: 5.7.25-0ubuntu0.18.10.2
--- PHP Version: 7.2.10-0ubuntu1
+-- PHP Version: 7.2.15-0ubuntu0.18.10.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -210,42 +210,42 @@ CREATE TABLE `countries_city` (
 --
 
 INSERT INTO `countries_city` (`id`, `city_name`, `city_rate`, `img`, `city_country_id`) VALUES
-(1, 'Cairo', 4, NULL, 1),
-(2, 'Alexandria', 5, NULL, 1),
-(3, 'Aswan', 5, NULL, 1),
-(4, 'Suhag', 3, NULL, 1),
-(5, 'Luxor', 5, NULL, 1),
-(6, 'Ismailia', 3, NULL, 1),
-(7, 'Paris', 5, NULL, 2),
-(8, 'Lyon', 4, NULL, 2),
-(9, 'Marseille', 3, NULL, 2),
-(10, 'Lille', 3, NULL, 2),
-(11, 'Nice', 3, NULL, 2),
-(12, 'Strasbourg', 3, NULL, 2),
-(13, 'Berlin', 4, NULL, 3),
-(14, 'Stuttgart', 3, NULL, 3),
-(15, 'Frankfurt', 3, NULL, 3),
-(16, 'Hamburg', 4, NULL, 3),
-(17, 'Marienberg', 2, NULL, 3),
-(18, 'Bermen', 2, NULL, 3),
-(19, 'Sydney', 4, NULL, 4),
-(20, 'South_Melbourne', 3, NULL, 4),
-(21, 'Brisbane', 3, NULL, 4),
-(22, 'Perth', 3, NULL, 4),
-(23, 'Adelaide', 2, NULL, 4),
-(24, 'NewCastle', 2, NULL, 4),
-(25, 'Shanghai', 3, NULL, 5),
-(26, 'Beijing', 2, NULL, 5),
-(27, 'Guangzhou', 2, NULL, 5),
-(28, 'Shenzhen', 2, NULL, 5),
-(29, 'Wuhan', 2, NULL, 5),
-(30, 'Tianjin', 2, NULL, 5),
-(31, 'Istanbul', 5, NULL, 6),
-(32, 'Ankara', 4, NULL, 6),
-(33, 'Izmir', 3, NULL, 6),
-(34, 'Bursa', 2, NULL, 6),
-(35, 'Adana', 2, NULL, 6),
-(36, 'Gaziantep', 2, NULL, 6);
+(1, 'Cairo', 4, 'cairo1.jpg', 1),
+(2, 'Alexandria', 5, 'alex1.jpg', 1),
+(3, 'Aswan', 5, 'aswan1.jpg', 1),
+(4, 'Suhag', 3, 'suhag1.jpg', 1),
+(5, 'Luxor', 5, 'luxor1.jpg', 1),
+(6, 'Ismailia', 3, 'ismailia1.jpg', 1),
+(7, 'Paris', 5, 'paris1.jpg', 2),
+(8, 'Lyon', 4, 'lyon1.jpg', 2),
+(9, 'Marseille', 3, 'marseille1.jpg', 2),
+(10, 'Lille', 3, 'lille1.jpg', 2),
+(11, 'Nice', 3, 'nice1.jpg', 2),
+(12, 'Strasbourg', 3, 'strasbourg1.jpg', 2),
+(13, 'Berlin', 4, 'berlin1.jpg', 3),
+(14, 'Stuttgart', 3, 'stuttgart1.jpg', 3),
+(15, 'Frankfurt', 3, 'frankfurt1.jpg', 3),
+(16, 'Hamburg', 4, 'hamburg1.jpg', 3),
+(17, 'Marienberg', 2, 'marienberg1.jpg', 3),
+(18, 'Bermen', 2, 'bermen1.jpg', 3),
+(19, 'Sydney', 4, 'sydney1.jpg', 4),
+(20, 'South_Melbourne', 3, 'southmelbourne1.jpg', 4),
+(21, 'Brisbane', 3, 'brisbane1.jpg', 4),
+(22, 'Perth', 3, 'perth1.jpg', 4),
+(23, 'Adelaide', 2, 'adelaide1.jpg', 4),
+(24, 'NewCastle', 2, 'newcastel1.jpg', 4),
+(25, 'Shanghai', 3, 'shanghai1.jpg', 5),
+(26, 'Beijing', 2, 'beijing1.jpg', 5),
+(27, 'Guangzhou', 2, 'guangzhou1.jpg', 5),
+(28, 'Shenzhen', 2, 'shenzhen1.jpg', 5),
+(29, 'Wuhan', 2, 'wuhan1.jpg', 5),
+(30, 'Tianjin', 2, 'tianjin1.jpg', 5),
+(31, 'Istanbul', 5, 'istanbul1.jpg', 6),
+(32, 'Ankara', 4, 'ankara1.jpg', 6),
+(33, 'Izmir', 3, 'izmir1.jpg', 6),
+(34, 'Bursa', 2, 'bursa1.jpg', 6),
+(35, 'Adana', 2, 'adana1.jpg', 6),
+(36, 'Gaziantep', 2, 'gaziantep1.jpg', 6);
 
 -- --------------------------------------------------------
 
@@ -265,12 +265,12 @@ CREATE TABLE `countries_country` (
 --
 
 INSERT INTO `countries_country` (`id`, `country_name`, `country_rate`, `img`) VALUES
-(1, 'Egypt', 4, ''),
-(2, 'France', 5, ''),
-(3, 'German', 3, ''),
-(4, 'Australia', 3, ''),
-(5, 'China', 2, ''),
-(6, 'Turkey', 4, '');
+(1, 'Egypt', 4, 'egypt1.jpg'),
+(2, 'France', 5, 'france1.jpg'),
+(3, 'German', 3, 'german1.jpg'),
+(4, 'Australia', 3, 'australia1.jpg'),
+(5, 'China', 2, 'china1.jpg'),
+(6, 'Turkey', 4, 'turkey1.jpg');
 
 -- --------------------------------------------------------
 
@@ -351,7 +351,87 @@ INSERT INTO `countries_hotel` (`id`, `hotel_name`, `hotel_city_id`) VALUES
 (60, 'Leonardo_Hotel_Hamburg_City_Nord', 16),
 (61, 'Radisson_Blu_Hotel_Hamburg', 16),
 (62, 'Steigenberger_Hotel_Treudelberg_Hamburg', 16),
-(63, 'Hotel_Hafen_Hamburg', 16);
+(63, 'Hotel_Hafen_Hamburg', 16),
+(64, 'pentahotel_Chemnitz', 17),
+(65, 'Hotel_Weißes_Roß_Marienberg', 17),
+(66, 'Hotel_Boží_Dar_Excalibur', 17),
+(67, 'Gewölberestaurant_Roßtunnel_Marienberg', 17),
+(68, 'Maritim_Hotel_Bremen', 18),
+(69, 'Radisson_Blu_Hotel_Bremen', 18),
+(70, 'Swissôtel_Bremen', 18),
+(71, 'INNSIDE_Bremen', 18),
+(72, 'QT_Sydney', 19),
+(73, 'Mercure_Sydney', 19),
+(74, 'Radisson_Blu_Plaza_Hotel_Sydney', 19),
+(75, 'Novotel_Sydney_on_Darling_Harbour', 19),
+(76, 'Imagine_Marco', 20),
+(77, 'City_Park_Hotel', 20),
+(78, 'Melbourne_City_Backpackers', 20),
+(79, 'Pullman_Melbourne_On_The_Park', 20),
+(80, 'Hilton_Brisbane', 21),
+(81, 'Brisbane_Marriott_Hotel', 21),
+(82, 'Pacific_Hotel_Brisbane', 21),
+(83, 'Hotel_Grand_Chancellor_Brisbane', 21),
+(84, 'Parmelia_Hilton_Perth', 22),
+(85, 'Mercure_Perth', 22),
+(86, 'Duxton_Hotel_Perth', 22),
+(87, 'Crown_Promenade_Perth', 22),
+(88, 'Hilton_Adelaide', 23),
+(89, 'Stamford_Plaza_Adelaide', 23),
+(90, 'InterContinental_Adelaide', 23),
+(91, 'Pullman_Adelaide', 23),
+(92, 'Staybridge_Suites_Newcastle', 24),
+(93, 'Maldron_Hotel_Newcastle', 24),
+(94, 'Sandman_Signature_Newcastle_Hotel', 24),
+(95, 'Copthorne_Hotel_Newcastle', 24),
+(96, 'New_World_Shanghai_Hotel', 25),
+(97, 'Shanghai_Marriott_Hotel_City_Centre', 25),
+(98, 'Dorsett_Shanghai', 25),
+(99, 'Sheraton_Shanghai_Pudong_Hotel  ', 25),
+(100, 'Fairmont_Beijing_Hotel', 26),
+(101, 'Rosewood_Beijing', 26),
+(102, 'Crowne_Plaza_Beijing_Chaoyang_U-Town', 26),
+(103, 'Crowne_Plaza_Beijing_Wangfujing', 26),
+(104, 'Sheraton_Guangzhou_Hotel', 27),
+(105, 'Hilton_Guangzhou_Tianhe', 27),
+(106, 'Asia_International_Hotel', 27),
+(107, 'Mandarin_Hotel_Guangzhou', 27),
+(108, 'Best_Western_Shenzhen_Felicity_Hotel', 28),
+(109, 'Hard_Rock_Hotel_Shenzhen', 28),
+(110, 'Four_Seasons_Hotel_Shenzhen', 28),
+(111, 'Hilton_Shenzhen_Shekou_Nanhai', 28),
+(112, 'Dorsett_Wuhan', 29),
+(113, 'Renaissance_Wuhan_Hotel', 29),
+(114, 'Sheraton_Wuhan_Hankou_Hotel', 29),
+(115, 'Ramada_Plaza_Tian_Lu_Hotel_Wuhan', 29),
+(116, 'The_Ritz-Carlton_Tianjin', 30),
+(117, 'Crowne_Plaza_Tianjin_Binhai', 30),
+(118, 'Shangri-La_Hotel_Tianjin', 30),
+(119, 'Hyatt_Regency_Tianjin_East', 30),
+(120, 'Radisson_Blu_Hotel_Istanbul_Sisli', 31),
+(121, 'W_Istanbul', 31),
+(122, 'Hilton_Istanbul_Bosphorus', 31),
+(123, 'Four_Seasons_Hotel_Istanbul_At_Sultanahmet', 31),
+(124, 'Radisson_Blu_Hotel_Ankara', 32),
+(125, 'Sheraton_Ankara_Hotel&Convention_Center', 32),
+(126, 'Ankara_HiltonSA', 32),
+(127, 'Bera_Ankara', 32),
+(128, 'Hilton_Izmir', 33),
+(129, 'Renaissance_Izmir_Hotel', 33),
+(130, 'Four_Points_by_Sheraton_Izmir', 33),
+(131, 'Mövenpick_Hotel_Izmir', 33),
+(132, 'Mercure_Bursa_Hotel', 34),
+(133, 'Aloft_Bursa_Hotel', 34),
+(134, 'Sheraton_Bursa_Hotel', 34),
+(135, 'Crowne_Plaza_Bursa', 34),
+(136, 'Sheraton_Grand_Adana', 35),
+(137, 'Divan_Adana', 35),
+(138, 'Sürmeli_Adana_Hotel', 35),
+(139, ' Sirin_Park_Hotel', 35),
+(140, 'Hampton_by_Hilton_Gaziantep', 36),
+(141, 'Hotel_ibis_Gaziantep', 36),
+(142, 'Hotel_Novotel_Gaziantep', 36),
+(143, 'Holiday_Inn_Gaziantep_Sehitkamil', 36);
 
 -- --------------------------------------------------------
 
@@ -625,6 +705,13 @@ CREATE TABLE `user_profile_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Dumping data for table `user_profile_user`
+--
+
+INSERT INTO `user_profile_user` (`id`, `user_name`, `name`, `password`, `is_admin`, `status`) VALUES
+(1, 'nada', 'nada', '1234567', 0, 0);
+
+--
 -- Indexes for dumped tables
 --
 
@@ -828,7 +915,7 @@ ALTER TABLE `countries_country`
 -- AUTO_INCREMENT for table `countries_hotel`
 --
 ALTER TABLE `countries_hotel`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=144;
 --
 -- AUTO_INCREMENT for table `countries_location`
 --
@@ -858,7 +945,7 @@ ALTER TABLE `hotel_reservation_hotelreservationrequest`
 -- AUTO_INCREMENT for table `user_profile_user`
 --
 ALTER TABLE `user_profile_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- Constraints for dumped tables
 --
