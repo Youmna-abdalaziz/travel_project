@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+{% load static %}
+<head>
+	 <link href="{% static 'bootstrap/css/bootstrap.min.css' %}"
+          rel="stylesheet" media="screen">
+</head>
+<body>
+	<script src="{% static 'bootstrap/jQuery.js' %}"></script>
+	<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+	<div id="countrySlides" class="carousel slide" data-ride="carousel">
+  		<div class="carousel-inner">
+    		<div class="carousel-item active">
+    			{% with 'images/'|add:country.country_name|add:'1.jpg' as image_static %}
+
+      			<img class="d-block w-100" src="{% static image_static %}" alt={{country.country_name}}>
+      			{% endwith %}
+      			<div class="carousel-caption d-none d-md-block">
+    				<h1>{{country.country_name}}</h1>
+    				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  				</div>
+   			 </div>
+    		<div class="carousel-item">
+    			{% with 'images/'|add:country.country_name|add:'2.jpg' as image_static %}
+
+      			<img class="d-block w-100" src="{% static image_static %}" alt={{country.country_name}}>
+      			{% endwith %}
+      			<div class="carousel-caption d-none d-md-block">
+    				<h1>{{country.country_name}}</h1>
+    				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  				</div>
+    		</div>
+    		<div class="carousel-item">
+    			{% with 'images/'|add:country.country_name|add:'3.jpg' as image_static %}
+
+      			<img class="d-block w-100" src="{% static image_static %}" alt={{country.country_name}}>
+      			{% endwith %}
+      			<div class="carousel-caption d-none d-md-block">
+    				<h1>{{country.country_name}}</h1>
+    				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  				</div>
+    		</div>
+    		<div class="carousel-item">
+    			{% with 'images/'|add:country.country_name|add:'4.jpg' as image_static %}
+
+      			<img class="d-block w-100" src="{% static image_static %}" alt={{country.country_name}}>
+      			{% endwith %}
+      			<div class="carousel-caption d-none d-md-block">
+    				<h1>{{country.country_name}}</h1>
+    				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  				</div>
+    		</div>
+    		<div class="carousel-item">
+    			{% with 'images/'|add:country.country_name|add:'5.jpg' as image_static %}
+
+      			<img class="d-block w-100" src="{% static image_static %}" alt={{country.country_name}}>
+      			{% endwith %}
+      			<div class="carousel-caption d-none d-md-block">
+    				<h1>{{country.country_name}}</h1>
+    				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  				</div>
+    		</div>
+    		<div class="carousel-item">
+    			{% with 'images/'|add:country.country_name|add:'6.jpg' as image_static %}
+
+      			<img class="d-block w-100" src="{% static image_static %}" alt={{country.country_name}}>
+      			{% endwith %}
+      			<div class="carousel-caption d-none d-md-block">
+    				<h1>{{country.country_name}}</h1>
+    				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  				</div>
+    		</div>
+  		</div>
+  		<a class="carousel-control-prev" href="#countrySlides" role="button" data-slide="prev">
+    	<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    	<span class="sr-only">Previous</span>
+  		</a>
+  		<a class="carousel-control-next" href="#countrySlides" role="button" data-slide="next">
+    	<span class="carousel-control-next-icon" aria-hidden="true"></span>
+    	<span class="sr-only">Next</span>
+  		</a>
+	</div>
+	<style>
+		.carousel-item{
+    		height: 500px;
+		} 
+		.carousel-item img{
+    		height: 500px;
+		}
+
+
+	</style>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div class="container">
+		<div class="row">
+		<h4>Cities in {{country.country_name}}</h4>
+		</div>
+		<br>
+		<br>
+		{% for city in cities %}
+  		<div class="row">
+  			<div class="col-3">
+  				{% with 'images/'|add:city.city_name|add:'1.jpg' as image_static %}
+
+      			<a href="/countries/{{city.id}}/city">
+      			<img src="{% static image_static %}">
+      			</a>
+      			{% endwith %}
+  			</div>
+  			<div class="col-6"><a href="/countries/{{city.id}}/city">{{city.city_name}}</a></div>
+		</div>
+		<br>
+		<br>
+		<br>
+		{% endfor %}
+	</div>
+
+	<style>
+		img{
+			height: 100px;
+			width:	150px;
+
+		}
+	</style>
+
+</body>
+</html>
