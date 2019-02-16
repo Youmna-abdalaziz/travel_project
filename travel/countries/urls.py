@@ -1,4 +1,4 @@
-"""travel URL Configuration
+"""iti URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.11/topics/http/urls/
@@ -13,22 +13,13 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-<<<<<<< HEAD
-from django.conf.urls import url,include
-=======
-from django.conf.urls import url, include
->>>>>>> b30ca5b9c35903cb862b2452efbd01f2b42b0f2f
-from django.contrib import admin
-from hotel_reservation import views
+from django.conf.urls import url
+from countries import views
+
+urlpatterns =[
+	url(r'^(?P<country_id>[0-9]+)/country$',views.display_country),
+	url(r'^(?P<country_id>[0-9]+)/country/(?P<city_id>[0-9]+)/city$',views.display_city),
+	url(r'^(?P<city_id>[0-9]+)/city$',views.display_city)
 
 
-
-urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-<<<<<<< HEAD
-    url(r'^hotel_reservation/',include('hotel_reservation.urls')),
-    url(r'^Car_rental/',include('car_rental.urls')),
-=======
-     url(r'^countries/',include('countries.urls'))
->>>>>>> b30ca5b9c35903cb862b2452efbd01f2b42b0f2f
 ]
