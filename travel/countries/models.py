@@ -30,3 +30,5 @@ class Location(models.Model):
 class Hotel(models.Model):
 	hotel_name=models.CharField(max_length=50)
 	hotel_city=models.ForeignKey(City)
+	def __str__(self):
+		return self.hotel_name
