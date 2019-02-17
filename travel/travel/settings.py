@@ -60,8 +60,11 @@ ROOT_URLCONF = 'travel.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'hotel_reservation/templets')],
-        'DIRS': [os.path.join(BASE_DIR,'car_rental/templets')],
+        'DIRS': [os.path.join(BASE_DIR,"user_profile/templates"),
+                 os.path.join(BASE_DIR,'countries/templets'),   
+                 os.path.join(BASE_DIR,'hotel_reservation/templets'),
+                 os.path.join(BASE_DIR,'car_rental/templets'),
+                ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -75,7 +78,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'travel.wsgi.application'
-
+AUTH_USER_MODEL = 'user_profile.TravelUsers'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
@@ -85,7 +88,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'travel_db',
         'USER':'root',
-        'PASSWORD':'',
+        'PASSWORD':'P@$$w0rd_',
         'HOST':'127.0.0.1',
         'PORT':'3306'
 	}
@@ -127,8 +130,13 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
-
 STATIC_URL = '/static/'
-STATICFILES_DIRS=(
-    os.path.join(BASE_DIR,'assets')
-)
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "user_profile/static"),
+    os.path.join(BASE_DIR, "countries/static"),
+    os.path.join(BASE_DIR,'hotel_reservation/assets')
+]
+#MEDIA_ROOT = os.path.join(BASE_DIR,'/user_profile/static/media')
+LOGIN_URL = '/user/profile/basic'
+
+LOGIN_REDIRECT_URL='/user/profile'

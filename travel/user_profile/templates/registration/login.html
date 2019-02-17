@@ -29,6 +29,10 @@
                         <h2 class="form-title">Login</h2>
                         <form method="POST" class="register-form" id="login-form">
                              {% csrf_token %}
+                         
+                             {% if form.errors %}
+                             <h4>  {{ form.errors }}  </h4>    
+                            {% endif %}
                             <div class="form-group">
                                 <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                         {{ form.username }}

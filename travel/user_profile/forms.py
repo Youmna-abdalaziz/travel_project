@@ -1,13 +1,18 @@
 from django import forms
-from django.contrib.auth.models import User
+from .models import TravelUsers
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import UserChangeForm 
 
 class AddUser(UserCreationForm):
     username = forms.CharField(required=True)
+    first_name =forms.CharField(label='First Name')
+    last_name = forms.CharField(label='Last Name')
+    email = forms.EmailField(label='Email Address')
+    password1 = forms.CharField(label=' Write password', widget=forms.PasswordInput,required=True)
+    password2 = forms.CharField(label='Rewrite password', widget=forms.PasswordInput)
     
     class Meta:
-        model= User
+        model= TravelUsers
         fields = (
             'username',
             'first_name',
@@ -28,11 +33,12 @@ class AddUser(UserCreationForm):
 
 class EditUser(UserChangeForm):
     class Meta:
-        model = User
+        model = TravelUsers
         fields=(
             'first_name',
             'last_name',
             'email',
-            'password'
+            'password',
+            'description'
         )
     

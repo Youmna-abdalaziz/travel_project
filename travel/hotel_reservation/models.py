@@ -1,7 +1,5 @@
 from django.db import models
 
-# Create your models here.
-from django.db import models
 
 # Create your models here.
 adult_CHOICES = (
@@ -12,7 +10,7 @@ adult_CHOICES = (
     )
 class HotelReservationRequest(models.Model):
     requested_hotel = models.ForeignKey('countries.Hotel')
-    #user_made_request = models.ForeignKey('') 
+    user_requested = models.ForeignKey('user_profile.TravelUsers',related_name='hotel_user') 
     from_date = models.DateField()
     to_date = models.DateField()
     no_of_adults = models.CharField(max_length=1, choices=adult_CHOICES)

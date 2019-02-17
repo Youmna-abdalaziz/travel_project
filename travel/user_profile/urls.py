@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^login/$', auth_views.login , name='login'),
     url(r'^logout/$', auth_views.logout,{'next_page':'login'}),
     url(r'^profile/edit/$', views.editprofile), 
-    url(r'^profile$',views.viewprofile),
+    url(r'^profile/basic/$',views.viewprofile , name='basic'),
+     url(r'^profile/requested$',views.viewrequested , name='requested'),
     #url(r'^userprofile/edit$',views.edit)
 ]
