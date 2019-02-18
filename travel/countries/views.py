@@ -16,3 +16,9 @@ def display_city(request,city_id):
 	locations_info=Location.objects.filter(location_city_id=city_id)
 	context={'city':city_info,'locations':locations_info}
 	return render (request,'city.html',context)
+
+def home(request):
+	topcountries=Country.objects.all().order_by('country_rate').reverse()[:6]
+	topcities=City.objects.all().order_by('city_rate').reverse()[:6]
+	context={'highcountries':topcountries,'highcities':topcities}
+	return render (request,'home.html',context)	
