@@ -72,6 +72,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+		        'countries.context_processors.add_variable_to_context',
             ],
         },
     },
@@ -88,7 +89,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'travel_db',
         'USER':'root',
-        'PASSWORD':'P@$$w0rd_',
+        'PASSWORD':'123456',
         'HOST':'127.0.0.1',
         'PORT':'3306'
 	}
