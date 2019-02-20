@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+{% load static %}
+<head>
+	 <link href="{% static 'bootstrap/css/bootstrap.min.css' %}"
+          rel="stylesheet" media="screen">
+</head>
+<body>
+	{% block gallary_block %}
+	<script src="{% static 'bootstrap/jQuery.js' %}"></script>
+	<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+	<div id="countrySlides" class="carousel slide" data-ride="carousel">
+  		<div class="carousel-inner">
+    		<div class="carousel-item active">
+    			{% with 'images/'|add:'toprated'|add:'1.jpg' as image_static %}
+
+      			<img class="d-block w-100" src="{% static image_static %}" alt={{country.country_name}}>
+      			{% endwith %}
+      			<div class="carousel-caption d-none d-md-block">
+    				<h1 class="rate">Top Rated Countries</h1>
+  				</div>
+   			 </div>
+   			 {% for country in highcountries %}
+   			 <div class="carousel-item">
+    			{% with 'images/'|add:country.country_name|add:'2.jpg' as image_static %}
+
+      			<a href="/countries/{{country.id}}/country"><img class="d-block w-100" src="{% static image_static %}" alt={{country.country_name}}></a>
+      			{% endwith %}
+      			<div class="carousel-caption d-none d-md-block">
+      				<h1 class="header">{{country.country_name}}</h1>
+    				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  				</div>
+    		</div>
+   			 {% endfor %}
+    	</div>
+    	<a class="carousel-control-prev" href="#countrySlides" role="button" data-slide="prev">
+    	<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    	<span class="sr-only">Previous</span>
+  		</a>
+  		<a class="carousel-control-next" href="#countrySlides" role="button" data-slide="next">
+    	<span class="carousel-control-next-icon" aria-hidden="true"></span>
+    	<span class="sr-only">Next</span>
+  		</a>
+	</div>
+	<style>
+		.carousel-item{
+    		height: 500px;
+		} 
+		.carousel-item img{
+    		height: 500px;
+		}
+		.rate{
+			color: black;
+			font-family: "Times New Roman";
+			font-size: 40px;
+
+		}
+		.header{
+			font-size: 60px;
+		}
+
+
+	</style>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	{% endblock %}
+  	{% block body_block %}
+	<center><h1>Top Rated Cities</h1></center>
+	<br>
+	<br>
+	<br>
+	<div class="container">
+		<div class="row">
+			{% for city in highcities %}
+				<div class="col-4">
+  				{% with 'images/'|add:city.city_name|add:'1.jpg' as image_static %}
+  				<a href="/countries/{{city.id}}/city">
+      			<img src="{% static image_static %}">
+      			</a>
+      			{% endwith %}
+      			</div>
+      			<div class="col-2"><a href="/countries/{{city.id}}/city">{{city.city_name}}</a></div>
+      			{% endfor %}
+      	</div>
+     </div>
+     <br>
+     <br>
+     <br>
+
+     <style>
+		img{
+			height: 180px;
+			width:	350px;
+			margin-bottom: 50px;
+
+
+		}
+	</style>
+	{% endblock %}
+	</body>
+</html>
+      			
+
+
+
+
+

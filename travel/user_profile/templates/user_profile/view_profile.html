@@ -1,4 +1,5 @@
-{% load static from staticfiles %}
+
+{% load static from staticfiles%}
 <html>
 <head>
 <link href="{% static 'resources/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet" id="bootstrap-css">
@@ -7,9 +8,6 @@
 <script src="{% static 'user_profile/view_profile.js'%}"></script>
 </head>
 <body>
-
-<!-- Include the above in your HEAD tag -->
-
 
 <link rel="stylesheet" href="{% static 'user_profile/view_profile.css'%}"/>
 
@@ -23,7 +21,6 @@
                         <div class="card-title mb-4">
                             <div class="d-flex justify-content-start">
                                 <div class="image-container">
-                                    <img src="" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
                                     <div class="middle">
                                         <input type="button" class="btn btn-secondary" id="btnChangePicture" value="Change" />
                                         <input type="file" style="display: none;" id="profilePicture" name="file" />
@@ -48,10 +45,10 @@
                             <div class="col-12">
                                 <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link active" id="basicInfo-tab" data-toggle="tab" href="basic" role="tab" aria-controls="basicInfo" aria-selected="true">Basic Info</a>
+                                        <a class="nav-link active" id="basicInfo-tab" data-toggle="tab" href="/user/profile/basic" role="tab" aria-controls="basicInfo" aria-selected="true">Basic Info</a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="connectedServices-tab" data-toggle="tab" href="requested" role="tab" aria-controls="requested Services" aria-selected="false">Requested Services</a>
+                                    <li class="nav-item ">
+                                        <a class="nav-link " id="connectedServices-tab" data-toggle="tab" href="/user/profile/requested" role="tab" aria-controls="requested Services" aria-selected="false">Requested Services</a>
                                     </li>
                                 </ul>
                                 <div class="tab-content ml-1" id="myTabContent">

@@ -3,15 +3,23 @@ from django.shortcuts import render
 from countries.models import Hotel
 from .forms import reservationForm
 from django.http import HttpResponseRedirect
+from user_profile.models import TravelUsers
 
-def reservation(request):      #pass city_id  
-    city_id_url='3'           #pass city_id   
+def reservation(request,cid):      #pass city_id  
+    city_id_url=cid          #pass city_id   
     form = reservationForm(cityid =  city_id_url)
+    
     if request.method == "POST":
         form = reservationForm(request.POST,cityid = city_id_url)
+        userr = TravelUsers.objects.get(username=request.user)
+        print(userr)
         if form.is_valid():
-            form=form.save()
+            
+            form=form.save(commit=False)
+            form.user_requested=request.user
+            form.save()
           
+            
 
     return render(request, 'hotelr.html', {'form':form})
 

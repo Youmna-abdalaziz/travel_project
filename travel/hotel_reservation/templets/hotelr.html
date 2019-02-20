@@ -1,5 +1,7 @@
+{% extends 'base.html'%}
 
 <html>
+{% block gallary_block %}
 		<style type="text/css">
 		 
 			 
@@ -8,9 +10,7 @@
 				background: #FAFAFA;
 				padding: 30px;
 				margin: 50px auto;
-				box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
-				border-radius: 10px;
-				border: 6px solid #305A72;
+				
 				
 			}
 			.form-style-9 ul{
@@ -61,34 +61,31 @@
 				margin-left: 7px;
 			}
 			.button_1{
-				-moz-box-shadow: inset 0px 1px 0px 0px #3985B1;
-				-webkit-box-shadow: inset 0px 1px 0px 0px #3985B1;
-				box-shadow: inset 0px 1px 0px 0px #3985B1;
-				background-color: #216288;
-				border: 1px solid #17445E;
+				background-color: #FFFFFF;
 				display: inline-block;
 				cursor: pointer;
-				color: #FFFFFF;
+				color: Green;
 				padding: 8px 18px;
 				text-decoration: none;
-				font: 12px Arial, Helvetica, sans-serif;
-				background: linear-gradient(to bottom, #2D77A2 5%, #337DA8 100%);
-				background-color: #28739E;
+				font: 16px Arial, Helvetica, sans-serif;
+				
 			}
 			.hent{
 				display: inline-block;
 				color: rgb(97, 5, 5);
-				font-weight: 700;
+				font-weight: 500;
 				margin-bottom: 6px;
 				margin-left: 10px;
-				font-size :15;
+				font-size :12;
 
 			}
 	
 
 			</style>
+			{% endblock %}
 	<body >
-			
+	
+	{% block body_block %}		
 			<form class="form-style-9" method="POST">
 			{% csrf_token %}
 			<h2 class="form-label">New Hotel reservation</h2>
@@ -117,13 +114,22 @@
 				{{ form.no_of_adults }}
 			</div>
 		<br>
+
+		
+	     <br>
 			<div>
 				<input class="button_1" type="submit" value="Submit your Reservation" />
 				<input class="button_1" type="submit" value="cancel" />
-     		</div>
+			 </div>
+		<br>
+		<div>
+		<span>{{form.errors}}</span>
+
+		</div>		 
 					
 			
 			</form>
+		{% endblock %}
 	</body>
 </html>
 

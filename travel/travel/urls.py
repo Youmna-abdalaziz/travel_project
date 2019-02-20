@@ -20,7 +20,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^user/', include('user_profile.urls')),
     url(r'^countries/',include('countries.urls')),
-    url(r'^hotel_reservation/',include('hotel_reservation.urls')),
+    url(r'^reservation/',include('hotel_reservation.urls')),
+    url(r'^experience/',include('comments_and_experiences.urls')),
     url(r'^Car_rental/',include('car_rental.urls')),
     
 ]

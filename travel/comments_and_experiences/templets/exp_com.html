@@ -1,0 +1,91 @@
+<html>
+    <style>
+       .expform{
+            position: fixed;
+            left: 750px;
+            position: fixed;
+            width: 450px;
+				background: #FAFAFA;
+				padding: 20px;
+				margin: 50px auto;
+				box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+				border-radius: 10px;
+        }
+        h1{
+            color:rgba(9, 9, 155, 0.856) ;
+            font-family:courier;
+        }
+        h3{
+            color:rgb(170, 8, 8);
+           
+        }
+
+        .expdata{
+            position: relative;
+            top: 35px;
+            right:350px;
+            max-width: 450px;
+				background: #FAFAFA;
+				padding: 20px;
+				margin: 50px auto;
+				box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+				border-radius: 10px;
+				border: 6px  rgb(0, 70, 110);
+        }
+
+    </style>
+    <body>
+        <div class='expform'>
+         <h1>Add Your Experiance</h1>
+              <form method="POST">
+                  {% csrf_token %}
+                  <p style="color:rgb(79, 101, 143)">Title:</p>
+                  {{ form_1.title}}                  
+                  <br>
+                  <p style="color:rgb(79, 101, 143)">Description:</p>
+                  {{ form_1.description }}
+                <br>  
+              <button type="submit" >Add</button>
+              </form> 
+              <br>
+        </div>     
+
+        <div class='expdata'> 
+            <br>
+                <h1>Experiance </h1>
+                  {% for i in exp%}
+                 <p>_______________________________________</p>
+
+                    <form method="POST">
+                         {% csrf_token %}
+                        <h3>{{i.title}}</h3>
+                        <p>{{i}}</p>
+
+                        <span style="color:blue;font-weight:bold">----Comments----</span>
+                        <br>
+
+                        {%for comment in comments%}
+                        <p>- {{comment}}</p>
+                        {%endfor%}
+                         <br>
+                         {{ form_2.comment }}
+
+                         <button type="submit" > Add Comment</button>
+            
+          <br> 
+                                                 
+                    <input value={{i.id}} name='expid' style="display: none"></input>       
+                    
+                    </form> 
+                                            
+                   {% endfor %}
+         
+        </div>
+
+        
+        
+                             
+  
+                                      
+   </body>
+</html>

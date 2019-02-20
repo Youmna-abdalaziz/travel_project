@@ -48,10 +48,10 @@
                             <div class="col-12">
                                 <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link" id="basicInfo-tab" data-toggle="tab" href="basic" role="tab" aria-controls="basicInfo" aria-selected="false">Basic Info</a>
+                                        <a class="nav-link" id="basicInfo-tab" data-toggle="tab" href="/user/profile/basic" role="tab" aria-controls="basicInfo" aria-selected="false">Basic Info</a>
                                     </li>
                                     <li class="nav-item ">
-                                        <a class="nav-link active" id="connectedServices-tab" data-toggle="tab" href="requested" role="tab" aria-controls="requested Services" aria-selected="true">Requested Services</a>
+                                        <a class="nav-link active" id="connectedServices-tab" data-toggle="tab" href="/user/profile/requested" role="tab" aria-controls="requested Services" aria-selected="true">Requested Services</a>
                                     </li>
                                 </ul>
                                 <div class="tab-content ml-1" id="myTabContent">
@@ -67,54 +67,68 @@
                                                 {% for row in hotel%}
                                         <div class="row">
                                             <div class="col-sm-3 col-md-2 col-5">
-                                                <label style="font-weight:bold;">hotel details</label>
+                                               <label style="font-weight:bold;">hotel details</label> 
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                <label style="font-weight:bold;"> from {{hotel.from_date}}</label>
-                                                 <label style="font-weight:bold;"> to {{hotel.to_date}}</label>
+                                                <label> from : {{row.from_date}}</label>
+                                                 <label> to : {{row.to_date}}</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                                
+                                                 <label> number of adults : {{row.no_of_adults}}</label>
                                             </div>
                                             <div class="col-md-8 col-6">
+                                                 <label> requested hotel :{{row.requested_hotel.hotel_name}} </label>
                                                 
                                             </div>
                                         </div>
                                         <hr />
                                                 {% endfor %}
                                             {% else %}
+                                             <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;"> Unfortunatlly you don't have any hotel requests </label>
+                                            </div>
                                                                     
                                         {% endif %}
 
-                                             
-                                        
-                                        
+
+                                        {% if car != none %}
+
 
                                         <div class="row">
                                             <div class="col-sm-3 col-md-2 col-5">
-                                                <label style="font-weight:bold;">First Name</label>
-                                            </div>
-                                            <div class="col-md-8 col-6">
-                                                
+                                                <label style="font-weight:bold;"> Your car requests</label>
                                             </div>
                                         </div>
                                         <hr />
-
+                                                {% for row in car%}
                                         <div class="row">
                                             <div class="col-sm-3 col-md-2 col-5">
-                                                <label style="font-weight:bold;">Last Name</label>
+                                                <label style="font-weight:bold;">car request details</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                               
+                                                 <label >start time : {{row.pick_up_time}}</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                 <label> Date : {{row.pick_up_date}}</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                <label> pickup point : {{row.pick_up_point.location_name}}  </label>
                                             </div>
                                         </div>
                                         <hr />
-                                       
-                                    </div>
-                                    <div class="tab-pane fade" id="connectedServices" role="tabpanel" aria-labelledby="ConnectedServices-tab">
-                                        Facebook, Google, Twitter Account that are connected to this account
-                                    </div>
+                                                {% endfor %}
+                                            {% else %}
+                                                <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;"> Unfortunatlly you don't have any car requests </label>
+                                                </div>                                                                    
+                                        {% endif %}
 
+
+
+
+
+                                    </div>
+                                   
                                 </div>
                             </div>
                         </div>

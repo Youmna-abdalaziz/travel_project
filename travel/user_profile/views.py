@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse,HttpResponseRedirect
 from .forms import AddUser , EditUser
 from hotel_reservation import models as hotel
+from countries import models as country
 from car_rental import models as car
 from django.contrib.auth.decorators import login_required
 # Create your views here.
@@ -13,9 +14,9 @@ def signup(request):
         if form.is_valid():
             form.save()
             # don't forget to redirect user to his own profile
-            return HttpResponseRedirect('profile')
+            return HttpResponseRedirect('/user/profile/basic')
         else:  # add some error messages
-            return HttpResponseRedirect('signup')
+            return HttpResponseRedirect('user/signup')
     else:            
         return render(request,'signup.html',{'form':form})
 
@@ -26,14 +27,16 @@ def viewprofile(request):
 
 @login_required
 def viewrequested(request):
+    print(request.user.id)
     try:
-        hotel_requests = hotel.HotelReservationRequest.objects.get(user_requested = request.user.id)
-        car_requests =  car.CarRentalRequests.objects.get(user_requested = request.user.id)          
+        hotel_requests = hotel.HotelReservationRequest.objects.filter(user_requested = request.user.id).select_related('requested_hotel')
+        car_requests =  car.CarRentalRequests.objects.filter(user_requested = request.user.id).select_related('destination','pick_up_point')          
     except Exception as e:
-        hotel_requests = None
         car_requests = None
+        hotel_requests = None
 
-    context ={'hotel':hotel_requests,'car' : car_requests }
+
+    context ={'hotel':hotel_requests,'car' : car_requests}
     return render(request,'user_profile/view_requested.html',context)    
 
 @login_required
