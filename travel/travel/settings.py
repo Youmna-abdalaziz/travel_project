@@ -76,7 +76,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'countries.context_processors.add_variable_to_context',
+		        'countries.context_processors.add_variable_to_context',
             ],
         },
     },
@@ -93,7 +93,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'travel_db',
         'USER':'root',
-        'PASSWORD':'P@$$w0rd_',
+        'PASSWORD':'123456',
         'HOST':'127.0.0.1',
         'PORT':'3306'
 	}
@@ -144,4 +144,8 @@ STATICFILES_DIRS = [
 #MEDIA_ROOT = os.path.join(BASE_DIR,'/user_profile/static/media')
 LOGIN_URL = '/user/login'
 
+<<<<<<< HEAD
 LOGIN_REDIRECT_URL='/user/profile/basic'
+=======
+LOGIN_REDIRECT_URL='/user/profile'
+>>>>>>> 5d0d4d0590614032edf8ce0bf6e68d24864aaeea
