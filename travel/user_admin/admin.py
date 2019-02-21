@@ -23,8 +23,14 @@ class AddUsers(admin.ModelAdmin):
     )
     list_display=['first_name','last_name','email','date_joined']
     list_filter=['username','date_joined']
+
+class AddLocationField(admin.ModelAdmin):
+       fieldsets=(
+        ['location',{'fields':['location_name']}],
+    )
     
 
+admin.site.register(country.Location,AddLocationField)
 admin.site.register(country.City,AddRelatedCity)
 admin.site.register(country.Country,AddRelatedCountry)
 admin.site.register(user.TravelUsers,AddUsers)
