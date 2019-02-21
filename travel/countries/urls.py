@@ -20,10 +20,7 @@ urlpatterns =[
 	url(r'^(?P<country_id>[0-9]+)/country$',views.display_country),
 	url(r'^(?P<country_id>[0-9]+)/country/(?P<city_id>[0-9]+)/city$',views.display_city),
 	url(r'^(?P<city_id>[0-9]+)/city$',views.display_city),
-<<<<<<< HEAD
     
-=======
->>>>>>> f120623aea13ef7e14a82f930c9828875bf90f88
 	url(r'^$',views.home)
 
 

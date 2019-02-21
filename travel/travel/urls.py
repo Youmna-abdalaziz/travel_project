@@ -20,14 +20,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^user/', include('user_profile.urls')),
     url(r'^countries/',include('countries.urls')),
-<<<<<<< HEAD
     url(r'^countries/(?P<city_id>[0-9]+)/reservation',include('hotel_reservation.urls')),
     url(r'^experience/',include('comments_and_experiences.urls')),
     url(r'^countries/(?P<city_id>[0-9]+)/rental/',include('car_rental.urls')),
-=======
-    url(r'^reservation/',include('hotel_reservation.urls')),
-    url(r'^experience/',include('comments_and_experiences.urls')),
-    url(r'^Car_rental/',include('car_rental.urls')),
->>>>>>> f120623aea13ef7e14a82f930c9828875bf90f88
     
 ]
