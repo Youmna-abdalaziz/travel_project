@@ -83,15 +83,25 @@
                                         </div>
                                         <hr />
                                                 {% endfor %}
+<<<<<<< HEAD
                                         {% else %}
                                              <div>
                                                 <label> Unfortunatlly you don't have any hotel requests </label>
+=======
+                                            {% else %}
+                                             <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;"> Unfortunatlly you don't have any hotel requests </label>
+>>>>>>> f120623aea13ef7e14a82f930c9828875bf90f88
                                             </div>
                                                                     
                                         {% endif %}
 
 
+<<<<<<< HEAD
                                         {% if car %}
+=======
+                                        {% if car != none %}
+>>>>>>> f120623aea13ef7e14a82f930c9828875bf90f88
 
 
                                         <div class="row">
@@ -104,6 +114,7 @@
                                         <div class="row">
                                             <div class="col-sm-3 col-md-2 col-5">
                                                 <label style="font-weight:bold;">car request details</label>
+<<<<<<< HEAD
                                             </div>
                                             <div class="col-md-8 col-6">
                                                  <label >start time : {{row.pick_up_time}}</label>
@@ -116,11 +127,23 @@
                                             </div>
                                              <div class="col-md-8 col-6">
                                                 <label> drop off point : {{row.destination.location_name}}  </label>
+=======
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                 <label >start time : {{row.pick_up_time}}</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                 <label> Date : {{row.pick_up_date}}</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                <label> pickup point : {{row.pick_up_point.location_name}}  </label>
+>>>>>>> f120623aea13ef7e14a82f930c9828875bf90f88
                                             </div>
                                         </div>
                                         <hr />
                                                 {% endfor %}
                                             {% else %}
+<<<<<<< HEAD
                                                   <div>
                                                 <label> Unfortunatlly you don't have any car requests </label>
                                             </div>                                                                   
@@ -130,6 +153,17 @@
 
 
 
+=======
+                                                <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;"> Unfortunatlly you don't have any car requests </label>
+                                                </div>                                                                    
+                                        {% endif %}
+
+
+
+
+
+>>>>>>> f120623aea13ef7e14a82f930c9828875bf90f88
                                     </div>
                                    
                                 </div>

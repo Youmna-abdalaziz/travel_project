@@ -11,7 +11,12 @@ class UserExperience(models.Model):
 
     def __str__(self):
         return self.title
+<<<<<<< HEAD
  
+=======
+    def __str__(self):
+        return self.description  
+>>>>>>> f120623aea13ef7e14a82f930c9828875bf90f88
 
 class Comments(models.Model):  
     comment =models.CharField(max_length =500)

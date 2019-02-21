@@ -64,7 +64,11 @@ TEMPLATES = [
         'DIRS': [os.path.join(BASE_DIR,"user_profile/templates"),
                  os.path.join(BASE_DIR,'countries/templates'),   
                  os.path.join(BASE_DIR,'hotel_reservation/templets'),
+<<<<<<< HEAD
                  os.path.join(BASE_DIR,'car_rental/templets'),
+=======
+                 os.path.join(BASE_DIR,'car_rental/templates'),
+>>>>>>> f120623aea13ef7e14a82f930c9828875bf90f88
                  os.path.join(BASE_DIR,'user_admin/templates'),
                   os.path.join(BASE_DIR,'comments_and_experiences/templets')
 
@@ -76,7 +80,11 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+<<<<<<< HEAD
                 'countries.context_processors.add_variable_to_context',
+=======
+		        'countries.context_processors.add_variable_to_context',
+>>>>>>> f120623aea13ef7e14a82f930c9828875bf90f88
             ],
         },
     },
@@ -93,7 +101,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'travel_db',
         'USER':'root',
-        'PASSWORD':'P@$$w0rd_',
+        'PASSWORD':'123456',
         'HOST':'127.0.0.1',
         'PORT':'3306'
 	}
@@ -144,4 +152,12 @@ STATICFILES_DIRS = [
 #MEDIA_ROOT = os.path.join(BASE_DIR,'/user_profile/static/media')
 LOGIN_URL = '/user/login'
 
+<<<<<<< HEAD
 LOGIN_REDIRECT_URL='/user/profile/basic'
+=======
+<<<<<<< HEAD
+LOGIN_REDIRECT_URL='/user/profile/basic'
+=======
+LOGIN_REDIRECT_URL='/user/profile'
+>>>>>>> 5d0d4d0590614032edf8ce0bf6e68d24864aaeea
+>>>>>>> f120623aea13ef7e14a82f930c9828875bf90f88

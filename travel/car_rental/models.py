@@ -14,4 +14,6 @@ class CarRentalRequests(models.Model):
     destination = models.ForeignKey('countries.Location',related_name='destination')
     def __str__(self):
         return self.pick_up_point
+    def __str__(self):
+        return self.destination   
       
