@@ -1,4 +1,12 @@
-{% load static from staticfiles %}
+{% extends "base.html"%}
+
+{% load static from staticfiles%}
+
+
+{% block gallary_block%}
+{% endblock %}
+
+{% block body_block %}
 <html>
 <head>
 <link href="{% static 'resources/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet" id="bootstrap-css">
@@ -68,3 +76,4 @@
 </body>
 
 </html>
+{% endblock %}

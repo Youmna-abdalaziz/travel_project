@@ -1,3 +1,4 @@
+{% extends 'citybase.html' %}
 <!DOCTYPE html>
 {% load static %}
 <head>
@@ -5,6 +6,7 @@
           rel="stylesheet" media="screen">
 </head>
 <body>
+  {% block gallary_block %}
 	<script src="{% static 'bootstrap/jQuery.js' %}"></script>
 	<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 	<div id="citySlides" class="carousel slide" data-ride="carousel">
@@ -93,6 +95,8 @@
 	<br>
 	<br>
 	<br>
+  {% endblock %}
+  {% block body_block %}
   <center><h2>Welcome to {{city.city_name}}</h2></center>
   <br>
   <br>
@@ -136,6 +140,10 @@
   <hr>
   <br>
   <br>
+
+  
+  <br>
+  <br>
   <center><h1>Recent Articles</h1></center>
   <br>
   <div class="container">
@@ -147,36 +155,24 @@
 
   <div class="row">
     <div class="col col-12">
-      <p> Here comes the experience</p>
-    </div>
-  </div>
-  <br>
-  <br>
-  <div class="row justify-content-md-center">
-      <div class="col col-lg-12">
-         <h3>User Comments</h3>
-    </div>
-    </div>
+			{% for i in exp %}
+			<a href="/experience/{{city.id}}/{{i.id}}/experience" >{{i.title}}</a>
+			<br>
+			<br>
+			<br>
+			{%endfor%}
+		  <div class='blocktext'>
+			<a href="/experience/{{city.id}}/experience"  >Add Experience</a>
+			</div>
 
-  <div class="row">
-    <div class="col col-12">
-      <p> Here comes the comments</p>
     </div>
   </div>
-  <br>
-  <br>
-  <div class="row justify-content-md-center">
-    <div class="col col-lg-6">
-      <h5>Add new Comment</h5>
-    </div>
-    <div class="col col-6">
-      <input type=Text>
-    </div>
-  </div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 
-  </div>
-  <br>
-  <br>
-  <br>
+  {% endblock %}
 </body>
 </html>

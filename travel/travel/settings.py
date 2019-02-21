@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'user_admin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,7 +43,7 @@ INSTALLED_APPS = [
     'hotel_reservation',
     'comments_and_experiences',
     'car_rental',
-    'user_admin'
+    
 ]
 
 MIDDLEWARE = [
@@ -61,9 +62,12 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR,"user_profile/templates"),
-                 os.path.join(BASE_DIR,'countries/templets'),   
+                 os.path.join(BASE_DIR,'countries/templates'),   
                  os.path.join(BASE_DIR,'hotel_reservation/templets'),
                  os.path.join(BASE_DIR,'car_rental/templets'),
+                 os.path.join(BASE_DIR,'user_admin/templates'),
+                  os.path.join(BASE_DIR,'comments_and_experiences/templets')
+
                 ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -72,6 +76,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'countries.context_processors.add_variable_to_context',
             ],
         },
     },
@@ -137,6 +142,6 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'hotel_reservation/assets')
 ]
 #MEDIA_ROOT = os.path.join(BASE_DIR,'/user_profile/static/media')
-LOGIN_URL = '/user/profile/basic'
+LOGIN_URL = '/user/login'
 
-LOGIN_REDIRECT_URL='/user/profile'
+LOGIN_REDIRECT_URL='/user/profile/basic'

@@ -1,17 +1,17 @@
-
+{% extends 'citybase.html' %}
+<!DOCTYPE html>
+{% load static from staticfiles %}
+{% block gallary_block %}{% endblock %}
+{% block body_block %}
 <html>
 		<style type="text/css">
 		 
 			 
-			.form-style-9{
-				max-width: 750px;
+		.form-style-9{
+				max-width: 450px;
 				background: #FAFAFA;
 				padding: 30px;
 				margin: 50px auto;
-				box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
-				border-radius: 10px;
-				border: 6px solid rgb(97, 8, 8);
-				
 			}
 			.form-style-9 ul{
 				padding:0;
@@ -55,38 +55,29 @@
 			.form-label
 			{
 				display: inline-block;
-				color: #a00e0e;
+				color: #3e485c;
 				font-weight: 700;
 				margin-bottom: 6px;
 				margin-left: 7px;
 			}
 			.button_1{
-				-moz-box-shadow: inset 0px 1px 0px 0px rgb(97, 8, 8);
-				-webkit-box-shadow: inset 0px 1px 0px 0px rgb(97, 8, 8);
-				box-shadow: inset 0px 1px 0px 0px  rgb(97, 8, 8);
-				background-color:  rgb(97, 8, 8);
-				border: 1px solid  rgb(97, 8, 8);
+				background-color: #FFFFFF;
 				display: inline-block;
 				cursor: pointer;
-				color: #FFFFFF;
+				color: Green;
 				padding: 8px 18px;
 				text-decoration: none;
-				font: 15px Arial, Helvetica, sans-serif;
-				background: linear-gradient(to bottom,  rgb(97, 8, 8), 5%,  rgb(97, 8, 8) 100%);
-				background-color:  rgb(97, 8, 8);
+				font: 16px Arial, Helvetica, sans-serif;
+				
 			}
 			.hent{
 				display: inline-block;
-				color: rgb(0, 0, 0);
-				font-weight: 700;
+				color: rgb(97, 5, 5);
+				font-weight: 500;
 				margin-bottom: 6px;
 				margin-left: 10px;
-				font-size :15;
+				font-size :12;
 
-			}
-			.div2{
-
-				margin-left: 400px;
 			}
 	
 
@@ -164,5 +155,6 @@
 			
 			</form>
 	</body>
+	{% endblock %}
 </html>
 

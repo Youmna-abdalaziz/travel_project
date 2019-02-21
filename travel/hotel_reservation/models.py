@@ -10,7 +10,7 @@ adult_CHOICES = (
     )
 class HotelReservationRequest(models.Model):
     requested_hotel = models.ForeignKey('countries.Hotel')
-    user_requested = models.ForeignKey('user_profile.TravelUsers',related_name='hotel_user') 
+    user_requested = models.ForeignKey('user_profile.TravelUsers', blank=True, null=True)
     from_date = models.DateField()
     to_date = models.DateField()
     no_of_adults = models.CharField(max_length=1, choices=adult_CHOICES)

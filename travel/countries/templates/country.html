@@ -1,3 +1,4 @@
+{% extends 'base.html' %}
 <!DOCTYPE html>
 {% load static %}
 <head>
@@ -5,6 +6,7 @@
           rel="stylesheet" media="screen">
 </head>
 <body>
+  {% block gallary_block %}
 	<script src="{% static 'bootstrap/jQuery.js' %}"></script>
 	<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 	<div id="countrySlides" class="carousel slide" data-ride="carousel">
@@ -93,6 +95,8 @@
 	<br>
 	<br>
 	<br>
+  {% endblock %}
+  {% block body_block %}
 	<div class="container">
 		<div class="row">
 		<h4>Cities in {{country.country_name}}</h4>
@@ -124,6 +128,6 @@
 
 		}
 	</style>
-
+  {% endblock %}
 </body>
 </html>

@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+{% block gallary_block%}
+{% endblock %}
+{% block body_block %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="{% static 'user_profile/style.css'%}">
+   
+</head>
+
+<body>
+    <div class="flex vr">
+            <div class="container">
+                    <h2> Your Personal Info </h2>
+                    <p> <span>Username :</span>{{user.username}}</p>
+                    <p> <span>First Name :</span>{{user.first_name}}</p>
+                    <p> <span>Last Name :</span>{{user.last_name}}</p>
+                    <p> <span>Email address :</span>{{user.email}}</p>
+                     <p> <a href="/user/profile/edit">Edit</a> </p>
+                    <p><a href="/user/logout">Logout</a> </p>
+                    
+            </div>
+            {% if hotel %}
+           <div class="flex"> <div class="container">
+                <h2> Hotel Reservation </h2>
+                 
+                        {% for row in hotel%}
+                        <h3> Hotel details </h3>
+                        <p> <span> From : </span>{{row.from_date}}</p>
+                        <p> <span> To : </span>{{row.to_date}}</p>                        
+                        <p> <span> Number of adults : </span>{{row.no_of_adults}}</p> 
+                        <p> <span> Requested Hotel : </span>{{row.requested_hotel.hotel_name}}</p>      
+                           <hr>     
+                {% endfor %}        
+                           
+                                        {% endif %}
+                
+        </div>
+        {% if car %}
+                <div class="container">
+                 <h2> Car Rental </h2>
+                 
+                        {% for row in car %}
+                        <h3> Car request details </h3>
+                        <p> <span> Pick up time : </span>{{row.pick_up_time}}</p>
+                        <p> <span> Date  : </span> {{row.pick_up_date}}</p>                        
+                        <p> <span> Pick up point : </span>{{row.pick_up_point.location_name}}</p> 
+                        <p> <span> Drop off point : </span>{{row.destination.location_name}}</p>      
+                        <hr>
+                {% endfor %}        
+                          
+                                        {% endif %}
+    </div>
+</body>
+{% endblock %}
+</html>

@@ -19,7 +19,9 @@ from countries import views
 urlpatterns =[
 	url(r'^(?P<country_id>[0-9]+)/country$',views.display_country),
 	url(r'^(?P<country_id>[0-9]+)/country/(?P<city_id>[0-9]+)/city$',views.display_city),
-	url(r'^(?P<city_id>[0-9]+)/city$',views.display_city)
+	url(r'^(?P<city_id>[0-9]+)/city$',views.display_city),
+    
+	url(r'^$',views.home)
 
 
 ]

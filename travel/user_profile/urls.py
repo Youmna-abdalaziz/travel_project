@@ -26,6 +26,4 @@ urlpatterns = [
     url(r'^logout/$', auth_views.logout,{'next_page':'login'}),
     url(r'^profile/edit/$', views.editprofile), 
     url(r'^profile/basic/$',views.viewprofile , name='basic'),
-     url(r'^profile/requested$',views.viewrequested , name='requested'),
-    #url(r'^userprofile/edit$',views.edit)
 ]
