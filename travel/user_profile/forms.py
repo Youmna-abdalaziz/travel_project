@@ -39,6 +39,5 @@ class EditUser(UserChangeForm):
             'last_name',
             'email',
             'password',
-            'description'
         )
     
