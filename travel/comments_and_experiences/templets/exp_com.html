@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {% extends 'base.html' %}
 {% load static from staticfiles %}
 <!DOCTYPE html>
@@ -29,74 +28,22 @@
         }
         h3{
             color:#6c6c6c;
-=======
-<html>
-    <style>
-       .expform{
-            position: fixed;
-            left: 750px;
-            position: fixed;
-            width: 450px;
-				background: #FAFAFA;
-				padding: 20px;
-				margin: 50px auto;
-				box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
-				border-radius: 10px;
-        }
-        h1{
-            color:rgba(9, 9, 155, 0.856) ;
-            font-family:courier;
-        }
-        h3{
-            color:rgb(170, 8, 8);
->>>>>>> f120623aea13ef7e14a82f930c9828875bf90f88
            
         }
 
         .expdata{
-<<<<<<< HEAD
 				background: #FAFAFA;
 				padding: 20px;
 				box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
 				border-radius: 20px;
-=======
-            position: relative;
-            top: 35px;
-            right:350px;
-            max-width: 450px;
-				background: #FAFAFA;
-				padding: 20px;
-				margin: 50px auto;
-				box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
-				border-radius: 10px;
->>>>>>> f120623aea13ef7e14a82f930c9828875bf90f88
 				border: 6px  rgb(0, 70, 110);
         }
 
     </style>
     <body>
-<<<<<<< HEAD
     <div class ="flex">
 
             <div class='expdata'> 
-=======
-        <div class='expform'>
-         <h1>Add Your Experiance</h1>
-              <form method="POST">
-                  {% csrf_token %}
-                  <p style="color:rgb(79, 101, 143)">Title:</p>
-                  {{ form_1.title}}                  
-                  <br>
-                  <p style="color:rgb(79, 101, 143)">Description:</p>
-                  {{ form_1.description }}
-                <br>  
-              <button type="submit" >Add</button>
-              </form> 
-              <br>
-        </div>     
-
-        <div class='expdata'> 
->>>>>>> f120623aea13ef7e14a82f930c9828875bf90f88
             <br>
                 <h1>Experiance </h1>
                   {% for i in exp%}
@@ -107,17 +54,10 @@
                         <h3>{{i.title}}</h3>
                         <p>{{i}}</p>
 
-<<<<<<< HEAD
                         <span style="font-weight:bold">----Comments----</span>
                         <br>
 
                         {% for comment in comments %}
-=======
-                        <span style="color:blue;font-weight:bold">----Comments----</span>
-                        <br>
-
-                        {%for comment in comments%}
->>>>>>> f120623aea13ef7e14a82f930c9828875bf90f88
                         <p>- {{comment}}</p>
                         {%endfor%}
                          <br>
@@ -134,7 +74,6 @@
                    {% endfor %}
          
         </div>
-<<<<<<< HEAD
         <div class='expform'>
          <h1>Add Your Experiance</h1>
               <form method="POST">
@@ -153,18 +92,10 @@
 
 
         </div>
-=======
-
-        
->>>>>>> f120623aea13ef7e14a82f930c9828875bf90f88
         
                              
   
                                       
    </body>
-<<<<<<< HEAD
 </html>
 {% endblock %}
-=======
-</html>
->>>>>>> f120623aea13ef7e14a82f930c9828875bf90f88
